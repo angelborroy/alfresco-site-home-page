@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Set site home page</shortname>
+  <url>/keensoft/site/home/{url}</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+</webscript>

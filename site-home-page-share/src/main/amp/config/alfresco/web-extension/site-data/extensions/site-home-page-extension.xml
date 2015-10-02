@@ -1,0 +1,26 @@
+<extension>
+	<modules>
+		<module>
+			<id>Select home page for Site</id>
+			<version>1.0</version>
+			<auto-deploy>true</auto-deploy>  
+			<configurations>
+                <config evaluator="string-compare" condition="WebFramework" replace="false">
+                    <web-framework>
+                        <dojo-pages>
+                            <packages>
+                                <package name="sitehomepage" location="js/keensoft/sitehomepage"/>
+                            </packages>
+                        </dojo-pages>
+                    </web-framework>
+                </config>
+            </configurations>
+            <customizations>
+				<customization>
+					<targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
+					<sourcePackageRoot>es.keensoft.share.header</sourcePackageRoot>
+				</customization>
+			</customizations>
+		</module>
+	</modules>
+</extension>
