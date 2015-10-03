@@ -25,17 +25,17 @@ define(["dojo/_base/declare",
       
       onSetCurrentPageAsHome:  function share_services_SiteHomePageService__onSetCurrentPageAsHome(publishPayload) {
          if (publishPayload && publishPayload.servletContext) {
-        	 
+             
             var currentPage = window.location.href;
             currentPage = currentPage.replace(window.location.origin + publishPayload.servletContext, "/page");
             
-     	   this.serviceXhr({
-     	      url: AlfConstants.PROXY_URI + "keensoft/site/home/" + currentPage,
-     	      method: "POST",
-     	      data: {},
-     	      successCallback: this.onSetHomePageSucess,
-     	      callbackScope: this
-     	   });            
+            this.serviceXhr({
+               url: AlfConstants.PROXY_URI + "keensoft/site/home/" + currentPage,
+               method: "POST",
+               data: {},
+               successCallback: this.onSetHomePageSucess,
+               callbackScope: this
+            });            
             
            this.alfPublish(this.setSiteHomePageTopic, { homePage: currentPage });
            
