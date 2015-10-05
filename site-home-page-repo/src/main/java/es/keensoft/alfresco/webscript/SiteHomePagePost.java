@@ -13,6 +13,8 @@ import org.springframework.extensions.webscripts.WebScriptRequest;
 import org.springframework.extensions.webscripts.WebScriptResponse;
 import org.springframework.http.MediaType;
 
+import com.adobe.xmp.impl.Base64;
+
 import es.keensoft.alfresco.util.SiteUtil;
 
 public class SiteHomePagePost extends AbstractWebScript {
@@ -25,15 +27,16 @@ public class SiteHomePagePost extends AbstractWebScript {
     public void execute(WebScriptRequest req, WebScriptResponse res) throws IOException {
         
         try {
-            
-            String siteName = SiteUtil.getSiteName(req.getExtensionPath());
+        	
+        	String extensionPath = Base64.decode(req.getExtensionPath());
+            String siteName = SiteUtil.getSiteName(extensionPath);
             
             if (siteName == null || siteName.equals("")) {
                 throw new WebScriptException("URL from a site is required!");
             }
-
+            
             NodeRef siteNodeRef = siteService.getSite(siteName).getNodeRef();
-            nodeService.setProperty(siteNodeRef, QName.createQName("homePagePath"), req.getExtensionPath());
+            nodeService.setProperty(siteNodeRef, QName.createQName("homePagePath"), extensionPath);
     
             JSONObject objProcess = new JSONObject();
             objProcess.put("result", "ok");
@@ -56,5 +59,5 @@ public class SiteHomePagePost extends AbstractWebScript {
     public void setNodeService(NodeService nodeService) {
         this.nodeService = nodeService;
     }
-
+    
 }

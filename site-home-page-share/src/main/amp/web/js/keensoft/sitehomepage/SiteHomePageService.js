@@ -29,8 +29,9 @@ define(["dojo/_base/declare",
             var currentPage = window.location.href;
             currentPage = currentPage.replace(window.location.origin + publishPayload.servletContext, "/page");
             
+            // http://caniuse.com/#feat=atob-btoa > 95% supported
             this.serviceXhr({
-               url: AlfConstants.PROXY_URI + "keensoft/site/home/" + currentPage,
+               url: AlfConstants.PROXY_URI + "keensoft/site/home/" + btoa(currentPage),
                method: "POST",
                data: {},
                successCallback: this.onSetHomePageSucess,
