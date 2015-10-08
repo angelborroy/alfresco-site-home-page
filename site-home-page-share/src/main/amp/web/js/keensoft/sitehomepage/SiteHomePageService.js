@@ -1,6 +1,7 @@
 define(["dojo/_base/declare",
         "alfresco/core/Core",
         "alfresco/core/CoreXhr",
+        "alfresco/core/NotificationUtils",
         "dojo/request/xhr",
         "dojo/json",
         "dojo/_base/lang",
@@ -8,9 +9,9 @@ define(["dojo/_base/declare",
         "dojo/dom-attr",
         "dojo/dom-class",
         "service/constants/Default"],
-        function(declare, AlfCore, AlfXhr, xhr, JSON, lang, dom, domAttr, domClass, AlfConstants) {
+        function(declare, AlfCore, AlfXhr, NotificationUtils, xhr, JSON, lang, dom, domAttr, domClass, AlfConstants) {
 
-   return declare([AlfCore, AlfXhr], {
+   return declare([AlfCore, AlfXhr, NotificationUtils], {
      
      TOPIC_SET_CURRENT_PAGE_AS_SITE_HOME: "ALF_SET_CURRENT_PAGE_AS_SITE_HOME",
      
@@ -54,7 +55,7 @@ define(["dojo/_base/declare",
          {
             var homeLinkParent = dom.byId("HEADER_HOME_text");
             if (homeLinkParent) {
-               location.reload();
+                this.displayMessage(this.message("message.site.home.page.ok"));
             }
          }
       },

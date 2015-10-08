@@ -2,13 +2,26 @@ Alfresco: Site Home Page (plus)
 ===============================
 From Alfresco 5.1 EE, a user can define the start page after login to Share.
 
-This addon provides an extension to use any arbitrary page as home for every Site (instead of Dashboard page). Site Administrator can define the home page for the Site similarly to related start page definition introduced by Alfresco 5.1 EE.
+This addon provides an extension to use any arbitrary page as home for every Site (instead of Dashboard page). 
+Site Administrator can define the home page for the Site similarly to related start page definition introduced by Alfresco 5.1 EE.
+Alfresco Administrator can restore home page for every site to Site Dashboard using Site Manager page at Admin Tools menu.
 
 ![alfresco-site-home-page-demo](https://cloud.githubusercontent.com/assets/1818300/10258849/6303c5e4-6962-11e5-997d-a0311d7035f5.png)
 
-Current addon status is ***BETA***.
+***License***
+The plugin is licensed under the [LGPL v3.0](http://www.gnu.org/licenses/lgpl-3.0.html). 
 
-The plugin is licensed under the [LGPL v3.0](http://www.gnu.org/licenses/lgpl-3.0.html). The current version is 1.0.0, which has been developed using Alfresco 5.1-EA, although it should run in Alfresco 5.0.d.
+***State***
+Current addon release 1.0.0 is ***BETA***
+
+**Compatibility**
+The current version has been developed using Alfresco 5.1-EA and Alfresco SDK 2.1, although it should run in Alfresco 5.0.d and Alfresco 5.0.c
+Browser compatibility: 95% supported (refer http://caniuse.com/#feat=atob-btoa)
+
+**Languages**
+Currently only provided in English
+
+**No original Alfresco resources have been overwritten**
 
 Downloading the ready-to-deploy-plugin
 --------------------------------------
