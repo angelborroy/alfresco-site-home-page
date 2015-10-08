@@ -13,4 +13,10 @@
           <property name="nodeService" ref="nodeService"/>
           <property name="siteService" ref="siteService"/>
     </bean>
+    <bean id="webscript.es.keensoft.homepagerestore.post"
+          class="es.keensoft.alfresco.webscript.SiteHomePageRestorePost"
+          parent="webscript">
+          <property name="nodeService" ref="nodeService"/>
+          <property name="siteService" ref="siteService"/>
+    </bean>
 </beans>

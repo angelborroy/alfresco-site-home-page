@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Restore site home page</shortname>
+  <url>/keensoft/site/home/restore/{site}</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+</webscript>

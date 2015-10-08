@@ -67,7 +67,9 @@ public class SiteHomeFilter implements Filter {
                         
                         JSONObject siteHomePageUrl = (JSONObject) new JSONParser().parse(res.getResponse());
                         if (siteHomePageUrl.get("homePagePath") != null) {
-                            response.sendRedirect(request.getContextPath() + "/" + siteHomePageUrl.get("homePagePath"));
+                            response.sendRedirect(request.getContextPath() + 
+                            		(siteHomePageUrl.get("homePagePath").toString().startsWith("/") ? "" : "/") +
+                            		 siteHomePageUrl.get("homePagePath"));
                         }
                         
                     }

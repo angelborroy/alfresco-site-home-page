@@ -22,6 +22,10 @@
                     <targetPackageRoot>org.alfresco.share.header</targetPackageRoot>
                     <sourcePackageRoot>es.keensoft.share.header</sourcePackageRoot>
                 </customization>
+                <customization>
+                    <targetPackageRoot>org.alfresco.share.pages</targetPackageRoot>
+                    <sourcePackageRoot>es.keensoft.share.pages</sourcePackageRoot>
+                </customization>
             </customizations>
         </module>
     </modules>
